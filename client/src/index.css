@@ -1,0 +1,406 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Custom Theme Styles */
+.islamic {
+  --primary-color: #10b981;
+  --secondary-color: #14b8a6;
+  --accent-color: #fbbf24;
+}
+
+.ramadan {
+  --primary-color: #f59e0b;
+  --secondary-color: #d97706;
+  --accent-color: #fcd34d;
+  /* Light yellow/orange theme - NOT dark */
+  --bg-primary: #fffef5;
+  --bg-secondary: #fffaeb;
+  --text-primary: #92400e;
+  --text-secondary: #b45309;
+}
+
+/* Islamic Pattern Background */
+.islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2310b981' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.ramadan-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-16.569-13.431-30-30-30v60c16.569 0 30-13.431 30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Light theme visibility fixes */
+.light .bg-white {
+  background-color: #ffffff !important;
+}
+
+.light .text-white {
+  color: #000000 !important;
+}
+
+.light .bg-gray-100 {
+  background-color: #f3f4f6 !important;
+}
+
+.light .bg-gray-200 {
+  background-color: #e5e7eb !important;
+}
+
+/* Button visibility fixes for light theme */
+.light button.bg-white {
+  background-color: #f3f4f6 !important;
+  border: 1px solid #d1d5db !important;
+  color: #374151 !important;
+}
+
+.light button.text-white {
+  color: #374151 !important;
+}
+
+.light .bg-primary {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+}
+
+.light .btn-primary {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.light .btn-secondary {
+  background-color: #6b7280 !important;
+  color: #ffffff !important;
+  border: 1px solid #9ca3af !important;
+}
+
+/* Ramadan theme specific styles - Light theme with warm colors */
+.ramadan .bg-white {
+  background-color: #fffef5 !important;
+}
+
+.ramadan .bg-gray-50 {
+  background-color: #fffaeb !important;
+}
+
+.ramadan .text-gray-900 {
+  color: #92400e !important;
+}
+
+.ramadan .text-gray-700 {
+  color: #b45309 !important;
+}
+
+.ramadan .border-gray-200 {
+  border-color: #fde68a !important;
+}
+
+.ramadan button.bg-white {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #f59e0b !important;
+}
+
+/* Responsive Design Utilities */
+@media (max-width: 640px) {
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .mobile-text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .tablet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Animation Improvements */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(34, 197, 94, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.6); }
+}
+
+@keyframes bounceGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounceGentle 2s infinite;
+}
+
+/* Focus States */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-800;
+}
+
+/* Button Variants */
+.btn-primary {
+  @apply px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors focus-ring;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 bg-gray-200 text-gray-900 rounded-lg hover:bg-gray-300 transition-colors focus-ring;
+}
+
+.btn-outline {
+  @apply px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors focus-ring;
+}
+
+/* Card Variants */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6;
+}
+
+.card-hover {
+  @apply card transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+}
+
+/* Button fixes for light theme */
+.btn-primary {
+  @apply bg-emerald-600 hover:bg-emerald-700 text-white border border-emerald-600 hover:border-emerald-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 hover:bg-gray-200 text-gray-900 border border-gray-300 hover:border-gray-400;
+}
+
+.btn-outline {
+  @apply bg-transparent hover:bg-emerald-50 text-emerald-600 border border-emerald-600 hover:border-emerald-700;
+}
+
+/* Dark theme button overrides */
+.dark .btn-secondary {
+  @apply bg-gray-700 hover:bg-gray-600 text-white border-gray-600 hover:border-gray-500;
+}
+
+.dark .btn-outline {
+  @apply hover:bg-emerald-900/20 text-emerald-400 border-emerald-400;
+}
+
+/* Light theme specific button visibility fixes */
+.btn-primary-fixed {
+  background-color: #059669;
+  border-color: #059669;
+  color: white;
+  border-width: 1px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary-fixed:hover {
+  background-color: #047857;
+  border-color: #047857;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.btn-primary-fixed:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Ensure button visibility in light theme without circular dependencies */
+html:not(.dark) button[class*="bg-white"] {
+  background-color: #059669 !important;
+  color: white !important;
+  border: 1px solid #059669 !important;
+}
+
+html:not(.dark) button[class*="bg-gray-50"][class*="text-white"] {
+  background-color: #059669 !important;
+  color: white !important;
+  border: 1px solid #059669 !important;
+}
+
+/* Text Utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Loading States */
+.skeleton {
+  @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+}
+
+.skeleton-text {
+  @apply skeleton h-4 w-full;
+}
+
+.skeleton-avatar {
+  @apply skeleton h-12 w-12 rounded-full;
+}
+
+/* Interactive Elements */
+.interactive {
+  @apply transition-all duration-200 hover:scale-105 active:scale-95;
+}
+
+.interactive-subtle {
+  @apply transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+}
+
+/* Theme-specific utilities */
+.islamic-gradient {
+  background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+}
+
+.ramadan-gradient {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+/* Mobile-first responsive utilities */
+.container-mobile {
+  @apply px-4 mx-auto;
+}
+
+@media (min-width: 640px) {
+  .container-mobile {
+    @apply px-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-mobile {
+    @apply px-8;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    @apply border-2 border-gray-900 dark:border-white;
+  }
+  
+  .btn-primary {
+    @apply border-2 border-white;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
